@@ -86,3 +86,14 @@ int main()
     return 0;
 }
 
+/*
+Output:
+Contents of program.txt:
+int a = 10 ;
+
+Output:
+int : Keyword
+a : Identifier
+10 : Constant
+;:special charectors
+*/

@@ -87,3 +87,12 @@ int main()
 
     return 0;
 }
+
+/*
+Output:
+Enter expression: a+b*c
+
+Intermediate Code:
+t = b * c
+u = a + t
+*/

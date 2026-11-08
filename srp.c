@@ -92,3 +92,30 @@ int main()
 
     return 0;
 }
+
+/*
+Output:
+Grammar:
+E->E+E
+E->E*E
+E->(E)
+E->i
+
+Enter input: i+i*i
+
+STACK       INPUT       ACTION
+--------------------------------------
+$i          +i*i$       SHIFT i
+$E          +i*i$       REDUCE E->i
+$E+         i*i$        SHIFT
+$E+i        *i$         SHIFT i
+$E+E        *i$         REDUCE E->i
+$E          *i$         REDUCE E->E+E
+$E*         i$          SHIFT
+$E*i        $           SHIFT i
+$E*E        $           REDUCE E->i
+$E          $           REDUCE E->E*E
+$E          $           ACCEPT
+
+ACCEPTED
+*/

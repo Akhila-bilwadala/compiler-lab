@@ -227,3 +227,34 @@ int main()
 
     return 0;
 }
+
+/*
+Output:
+Enter number of productions: 7
+Enter productions (use e for epsilon):
+S=ABC
+A=DEF
+B=e
+C=e
+D=e
+E=e
+F=e
+
+FIRST SETS:
+FIRST(S) = { e }
+FIRST(A) = { e }
+FIRST(B) = { e }
+FIRST(C) = { e }
+FIRST(D) = { e }
+FIRST(E) = { e }
+FIRST(F) = { e }
+
+FOLLOW SETS:
+FOLLOW(S) = { $ }
+FOLLOW(A) = { $ }
+FOLLOW(B) = { $ }
+FOLLOW(C) = { $ }
+FOLLOW(D) = { $ }
+FOLLOW(E) = { $ }
+FOLLOW(F) = { $ }
+*/

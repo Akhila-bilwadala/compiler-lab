@@ -32,6 +32,7 @@ void Eprime()
         Eprime();
     }
 }
+
 void T()
 {
     F();
@@ -46,6 +47,7 @@ void Tprime()
         Tprime();
     }
 }
+
 void F()
 {
     if (input[i] >= 'a' && input[i] <= 'z')
@@ -67,3 +69,10 @@ void F()
         error = 1;
     }
 }
+
+/*
+Output:
+Enter expression: i+j
+
+Accepted
+*/
