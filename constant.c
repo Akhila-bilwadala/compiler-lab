@@ -1,90 +1,49 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 
-void constant();
-void change(int p,char *res);
-void printthe();
+#include<stdio.h>
+#include<string.h>
 
-
-struct exp{
-	char op[2],op1[5],op2[5],res[5];
-	int flag;
-}arr[10];
-
+char op[10][5], a[10][10], b[10][10], res[10][10];
 int n;
-int main(){
-											
-	printf("Enter the no of stages:");
-	scanf("%d",&n);
-	for (int i = 0;i<n;i++){
-		scanf("%s",arr[i].op);
-		scanf("%s",arr[i].op1);
-		scanf("%s",arr[i].op2);
-		scanf("%s",arr[i].res);
-		arr[i].flag = 0;
-	}
-	constant();
-	printthe();
-	return 0;
-}
-void constant(){
-	int op1,op2,res;
-	char op,res1[5];
-	for (int i = 0; i < n;i++){
-		if(isdigit(arr[i].op1[0]) && isdigit(arr[i].op2[0]) || strcmp(arr[i].op,"=") == 0){
-		op1 = atoi(arr[i].op1);
-		op2 = atoi(arr[i].op2);
-		op = arr[i].op[0];
-		
-		switch(op){
-			case '+':
-				res=op1+op2;
-				break;
-			case '-':
-				res=op1-op2;
-				break;
-			case '*':
-				res=op1 * op2;
-				break;
-			case '/':
-				res=op1 / op2;
-				break;
-			case '=':
-				res = op1;
-				break;	
-		}
-		
-		sprintf(res1,"%d",res);
-		arr[i].flag = 1;
-		change(i,res1);
-		
-		}
-	
-	}
-	
 
+int main()
+{
+    int i, j;
 
+    printf("Enter number of expressions: ");
+    scanf("%d", &n);
+
+    printf("Enter op op1 op2 result:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        scanf("%s %s %s %s", op[i], a[i], b[i], res[i]);
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        if(strcmp(op[i], "=") == 0)
+        {
+            for(j = i + 1; j < n; j++)
+            {
+                if(strcmp(res[i], a[j]) == 0)
+                    strcpy(a[j], a[i]);
+
+                if(strcmp(res[i], b[j]) == 0)
+                    strcpy(b[j], a[i]);
+            }
+        }
+    }
+
+    printf("\nOptimized code:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        printf("%s %s %s %s\n", op[i], a[i], b[i], res[i]);
+    }
+
+    return 0;
 }
 
-void change(int p, char *res){
-	for (int i = p+1 ;i<n;i++){
-		if(strcmp(arr[p].res,arr[i].op1) == 0){
-			strcpy(arr[i].op1,res);
-		}else if (strcmp(arr[p].res,arr[i].op2) == 0){
-			strcpy(arr[i].op2,res);
-		}																																								
-	}
-}
-
-void printthe(){
-	for (int i = 0;i<n;i++){
-		if(!arr[i].flag){
-			printf("%s %s %s %s",arr[i].op,arr[i].op1,arr[i].op2,arr[i].res);
-		}
-	}
-}
 
 /*
 Output:
