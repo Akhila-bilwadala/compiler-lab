@@ -109,3 +109,24 @@ int main()
 
     return 0;
 }
+
+/*
+Output:
+Enter number of states: 2
+Enter number of inputs: 2
+Enter state 1: 0
+Enter state 2: 1
+Enter final state: 1
+Enter input symbols:
+0 1
+Enter transition states:
+(q0, 0) = q0
+(q0, 1) = q1
+(q1, 0) = q0
+(q1, 1) = q1
+Enter length of string: 1
+Enter input string:
+1
+
+String Accepted
+*/

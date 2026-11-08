@@ -60,3 +60,21 @@ int main()
 
     return 0;
 }
+
+/*
+Output:
+Enter number of states: 3
+Enter states:
+q0
+q1
+q2
+Enter number of transitions: 3
+Enter transitions (from input to):
+q0 e q1
+q1 e q2
+q2 a q2
+
+Epsilon closure of q0 = { q0 q1 q2 }
+Epsilon closure of q1 = { q1 q2 }
+Epsilon closure of q2 = { q2 }
+*/

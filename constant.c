@@ -86,6 +86,13 @@ void printthe(){
 	}
 }
 
+/*
+Output:
+Enter the no of stages: 2
+User enters:
++ 2 3 t1
++ t1 b t2
 
-
-
+Output:
++ 5 b t2
+*/
