@@ -49,9 +49,12 @@ int main()
 Output:
 Enter the no of stages: 2
 User enters:
-+ 2 3 t1
-+ t1 b t2
+= 10 - t1
++ t1 20 t2
+. t1 5 t3
 
 Output:
-+ 5 b t2
+= 10 - t1
++ 10 20 t2
+. 10 5 t3
 */
