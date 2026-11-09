@@ -1,0 +1,2 @@
+Compiler design lab
+Flex counts words and characters.
